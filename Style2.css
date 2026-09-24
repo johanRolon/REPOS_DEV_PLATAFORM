@@ -166,15 +166,7 @@ main{
     padding: 4px 10px;
     font-size: 0.75rem;  
 }
-.mm{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.dv{
-color: rgb(39, 40, 41);
 
-}
 
 .SA{
     background-color: rgb(48, 48, 255);
@@ -185,4 +177,75 @@ color: rgb(39, 40, 41);
     width: 35px;
 }
 
+#toggle {
+    display: none;         /* el checkbox no se ve */
+}
+.cerrar {
+    display: none;
+}
 
+.hamburguesa {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.izq {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.dv {
+    margin: 0;
+    font-weight: normal;
+    color: rgb(39, 40, 41);
+}
+
+.mm {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.mm p {
+    margin: 0;
+    font-weight: bold;
+}
+@media (max-width: 568px) {
+    .hamburguesa {
+        display: block;
+        z-index: 2;
+    }
+
+    header {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        z-index: 10;
+    }
+
+    /* si el checkbox está marcado, se muestra el menú */
+    #toggle:checked ~ .dashboard header {
+        display: block;
+    }
+    #toggle:checked ~ .dashboard .cerrar {
+    display: block;
+    position: fixed;       /* cubre toda la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;            /* debajo del menú (10) y de la barra (20) */
+}
+}
