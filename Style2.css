@@ -248,4 +248,7 @@ main{
     height: 100%;
     z-index: 5;            /* debajo del menú (10) y de la barra (20) */
 }
+    .dv {
+        font-size: 24px;
+    }
 }
