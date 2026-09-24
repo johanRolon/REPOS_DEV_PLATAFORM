@@ -1,0 +1,115 @@
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Define la tipografía y sus alternativas */
+    
+    margin: 0;                     /* Elimina el margen externo predeterminado del navegador */
+    padding: 0;    
+    justify-content:center ;
+
+    display: flex;                /* Elimina el relleno interno predeterminado del navegador */
+}
+
+/* Layout Principal estructurado con CSS Grid */
+
+
+
+
+
+
+
+
+/* Estructura para secciones dentro del contenido principal */
+section { 
+    background: white;            /* Fondo blanco para destacar del fondo general */
+    padding: 20px;                /* Espaciado interno de la tarjeta */
+    margin-bottom: 20px; 
+    margin-top: 40px;         /* Separación inferior respecto a la siguiente sección */
+    border-radius: 8px;           /* Bordes redondeados */
+    border: 3px solid gray; /* Borde delgado para definir los límites de la caja */
+    max-width: 750px; 
+}
+
+
+.btne{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* ==========================================================================
+   FORMULARIOS
+   ========================================================================== */
+
+form label { 
+    display: block;               /* Cambia el label a bloque para que la etiqueta ocupe toda la línea */
+    margin-top: 10px;             /* Separa la etiqueta del campo anterior */
+    font-weight: bold;            /* Texto en negrita para resaltar los campos */
+}
+
+form input, form select, form textarea { 
+    width: 100%;                  /* El campo ocupa todo el ancho disponible */
+    padding: 8px;                 /* Relleno interno para facilitar la lectura y el clic */
+    margin-top: 5px;              /* Separa el campo de entrada de su etiqueta superior */
+    box-sizing: border-box;       /* Incluye el padding y el border dentro del ancho total asignado (100%) */
+}
+
+form button { 
+    background: blue; /* Fondo azul secundario */
+    color: white;                 /* Texto blanco */
+    border: none;                 /* Elimina el borde tridimensional nativo del botón */
+    padding: 10px 15px;           /* Espaciado interno horizontal y vertical del botón */
+    margin-top: 15px;             /* Distancia respecto al último campo del formulario */
+    border-radius: 4px;           /* Esquinas redondeadas */
+    cursor: pointer;              /* Cambia el cursor del ratón a una "mano" indicando interacción */
+}
+.tit{
+    justify-content: center;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    padding: left 30px; ;
+}
+.spp{
+    width: 300px;
+}
+
+input ,select{
+    border-radius: 8px;
+     border: 1px solid rgb(215, 210, 210);
+}
+.check {
+    display: flex;
+    align-items: center;
+    gap: 8px;              /* espacio entre el checkbox y el texto */
+    margin-top: 15px;
+}
+.btn-check {
+    width: auto;           /* esto es lo que faltaba: anula el 100% */
+    margin: 0;
+    padding: 0;
+}
+.btn-check:hover{
+    background-color: #2a0aa7;
+    transition: all 1s ease;
+}
+.sub {
+    display: block;        /* el botón queda en su propia línea */
+    width: 100%;           /* ocupa todo el ancho, como los campos */
+}
+/* ==========================================================================
+   DISEÑO ADAPTATIVO (MEDIA QUERIES / RESPONSIVE DESIGN)
+   ========================================================================== */
+
+/* Se activa automáticamente en pantallas con un ancho máximo de 768px (móviles y tablets en vertical) */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr; /* Pasa de 2 columnas a 1 sola columna ocupando todo el ancho */
+        
+        /* Reestructura las áreas del grid para apilar los elementos verticalmente */
+        grid-template-areas: 
+            "header"              /* 1. Encabezado */
+            "nav"                 /* 2. Menú de navegación */
+            "main"                /* 3. Contenido principal */
+            "aside"               /* 4. Barra lateral pasa a quedar abajo del contenido */
+            "footer";             /* 5. Pie de página al final */
+    }
+}

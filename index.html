@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+   
+            <section id="formularios">
+               <div class="tit"> <img  src="resources/{7675F8D5-9D60-4CB8-BE6B-DC72ECFC65FF}.png" alt=""></div>
+                <p>ingresa tus credenciales para acceder al panel de control.</p>
+
+                <!-- 
+                    [FORM]: Contenedor del formulario.
+                    - 'action': URL donde se procesarán los datos.
+                    - 'method': Método HTTP de envío (GET / POST).
+                -->
+                <form action="index2.html" method="get" >
+                    
+                   
+                       <label for="correo_electronico">Correo Electrónico*</label>
+                    <input type="email" id="correo" name="correo_usuario" placeholder="ejemplo@.edu.co" required >
+                    <label for="nombre" >Contraseña*</label>
+                   
+                    <input type="password" id="nombre" name="Contraseña"  required>
+
+                   
+
+                    <label for="nivel">Rol de desarrollo:</label>
+                    <!-- [SELECT]: Lista desplegable de opciones. -->
+                    <select id="nivel" name="nivel_experiencia" required>
+                        <!-- [OPTION]: Cada elemento dentro del desplegable. -->
+                        <option value="principiante">desarrollador Frontend</option>
+                        <option value="intermedio">desarrollador Backend</option>
+                        <option value="avanzado">desarrollador FullStack</option>
+                    </select>
+                    
+                    <div class="check">
+                     <input type="checkbox" class="btn-check" id="btn-check" required>
+                    <span class="spp">Acepto los terminos y condiciones</span>
+                    </div>
+                    
+                    <button class="sub" type="submit"  >ingresa al Dashboard</button>
+                </form>
+            </section>
+</body>
+</html>
